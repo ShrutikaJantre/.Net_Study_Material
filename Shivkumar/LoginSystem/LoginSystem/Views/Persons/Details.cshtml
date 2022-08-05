@@ -1,0 +1,45 @@
+﻿@model LoginSystem.Models.Person
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/CustomLayout.cshtml";
+}
+
+@Html.Partial("PartialView1")
+@{ 
+    Html.RenderPartial("PartialView1");
+}
+<h2>WELCOME</h2>
+
+<div>
+    <h4> @Html.DisplayFor(model => model.LoginName)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Update", "Edit", new { id = Model.LoginName }) |
+
+    @*@Html.ActionLink("Logout", "Logout", new { /* id = Model.PrimaryKey */ }) |*@
+    @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="Logout" value="Logout" class="btn btn-default" />
+            </div>
+        </div>*@
+    @*@{
+        Html.RenderPartial("Logout");
+
+    }*@
+
+    @Html.Partial("Logout")
+</p>
